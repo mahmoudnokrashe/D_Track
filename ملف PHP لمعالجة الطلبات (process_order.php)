@@ -1,0 +1,19 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // تلقي البيانات من النموذج
+    $items = $_POST['items'];
+    $payment_method = $_POST['payment_method'];
+    $delivery_method = $_POST['delivery_method'];
+
+    // يمكنك هنا إجراء الإجراءات اللازمة مثل حفظ الطلب في قاعدة البيانات
+    // في هذا المثال، سنقوم بطباعة البيانات فقط للتحقق
+    echo "<h2>تم تقديم الطلب بنجاح</h2>";
+    echo "<p>العناصر المطلوبة: $items</p>";
+    echo "<p>طريقة الدفع: $payment_method</p>";
+    echo "<p>طريقة التوصيل: $delivery_method</p>";
+} else {
+    // إذا تم الوصول إلى هذا الملف مباشرة دون إرسال بيانات، قم بتوجيه المستخدم إلى صفحة تقديم الطلبات
+    header("Location: order.php");
+    exit;
+}
+?>

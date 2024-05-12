@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الإعلانات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>إدارة الإعلانات</h1>
+    <div class="advertisements">
+        <h2>إنشاء إعلان جديد:</h2>
+        <form action="create_advertisement.php" method="post">
+            <label for="title">عنوان الإعلان:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="description">وصف الإعلان:</label>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+            <label for="image">صورة الإعلان:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+            <button type="submit">نشر الإعلان</button>
+        </form>
+    </div>
+    <div class="existing-advertisements">
+        <h2>الإعلانات الحالية:</h2>
+        <!-- يمكن عرض الإعلانات الحالية هنا -->
+    </div>
+</body>
+</html>

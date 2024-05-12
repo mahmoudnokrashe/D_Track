@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقييم ومراجعة الطلبات</title>
+    <link rel="stylesheet" href="styles 2.css">
+</head>
+<body>
+    <h1>تقييم ومراجعة الطلبات</h1>
+    <div class="order-details">
+        <h2>تفاصيل الطلب:</h2>
+        <p>رقم الطلب: #123456</p>
+        <p>المنتجات المطلوبة:</p>
+        <ul>
+            <li>اسم المنتج 1 - الكمية: 2</li>
+            <li>اسم المنتج 2 - الكمية: 1</li>
+            <!-- يمكن إضافة المزيد من تفاصيل الطلب هنا -->
+        </ul>
+    </div>
+    <div class="review-form">
+        <h2>تقييم ومراجعة الخدمة:</h2>
+        <form action="submit_review.php" method="post">
+            <label for="rating">التقييم:</label>
+            <select id="rating" name="rating">
+                <option value="5">5 نجوم - ممتاز</option>
+                <option value="4">4 نجوم - جيد جدًا</option>
+                <option value="3">3 نجوم - مقبول</option>
+                <option value="2">2 نجوم - سيء</option>
+                <option value="1">1 نجم - سيء جدًا</option>
+            </select><br><br>
+            <label for="comment">التعليق:</label><br>
+            <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br><br>
+            <button type="submit">إرسال التقييم</button>
+        </form>
+    </div>
+</body>
+</html>

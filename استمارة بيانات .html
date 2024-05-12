@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Add some padding to the content to prevent it from being hidden behind the header */
+    .content {
+      padding-top: 60px; /* Adjust according to your header height */
+    }
+  </style>
+    <title>استمارة البيانات</title>
+	 <link rel="stylesheet" href="M2.css">
+</head>
+<body>
+
+<header>
+    <h1>استمارة البيانات</h1>
+	<nav>
+            <ul>
+                <li><a href="Use.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="MD5.html">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+		<hr/>
+</header>
+
+<!-- نموذج بيانات العميل -->
+<section id="customer-form">
+    <h2>استمارة بيانات العميل</h2>
+    <form>
+        <label for="customer-name">الاسم:</label><br>
+        <input type="text" id="customer-name" name="customer-name"><br><br>
+        
+        <label for="customer-address">العنوان:</label><br>
+        <input type="text" id="customer-address" name="customer-address"><br><br>
+
+        <label for="customer-location">الموقع الجغرافي:</label><br>
+        <input type="text" id="customer-location" name="customer-location"><br><br>
+
+        <div id="customer-map"></div><br>
+
+        <button type="button" onclick="showMap('customer-location', 'customer-map')">عرض الموقع على الخريطة</button>
+    </form>
+</section>
+
+<!-- نموذج بيانات التاجر -->
+<section id="merchant-form">
+    <h2>استمارة بيانات التاجر</h2>
+    <form>
+        <label for="merchant-name">الاسم:</label><br>
+        <input type="text" id="merchant-name" name="merchant-name"><br><br>
+        
+        <label for="merchant-address">العنوان:</label><br>
+        <input type="text" id="merchant-address" name="merchant-address"><br><br>
+
+        <label for="merchant-location">الموقع الجغرافي:</label><br>
+        <input type="text" id="merchant-location" name="merchant-location"><br><br>
+
+        <div id="merchant-map"></div><br>
+
+        <button type="button" onclick="showMap('merchant-location', 'merchant-map')">عرض الموقع على الخريطة</button>
+    </form>
+</section>
+
+<!-- نموذج بيانات الناقل -->
+<section id="carrier-form">
+    <h2>استمارة بيانات الناقل</h2>
+    <form>
+        <label for="carrier-name">الاسم:</label><br>
+        <input type="text" id="carrier-name" name="carrier-name"><br><br>
+        
+        <label for="carrier-address">العنوان:</label><br>
+        <input type="text" id="carrier-address" name="carrier-address"><br><br>
+
+        <label for="carrier-location">الموقع الجغرافي:</label><br>
+        <input type="text" id="carrier-location" name="carrier-location"><br><br>
+
+        <div id="carrier-map"></div><br>
+
+        <button type="button" onclick="showMap('carrier-location', 'carrier-map')">عرض الموقع على الخريطة</button>
+    </form>
+</section>
+
+<!-- خريطة جوجل -->
+<script>
+    function showMap(locationInputId, mapDivId) {
+        var location = document.getElementById(locationInputId).value;
+        var geocoder = new google.maps.Geocoder();
+        var mapOptions = {
+            zoom: 15,
+            center: { lat: -34.397, lng: 150.644 }
+        };
+        var map = new google.maps.Map(document.getElementById(mapDivId), mapOptions);
+        geocoder.geocode({ 'address': location }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            } else {
+                alert('يتعذر العثور على الموقع، يُرجى التأكد من العنوان.');
+            }
+        });
+    }
+</script>
+
+<!-- تضمين خريطة جوجل -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+</body>
+</html>

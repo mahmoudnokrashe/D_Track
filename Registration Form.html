@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+	 <link rel="stylesheet" href="M2.css">
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form action="submit.php" method="post">
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone"><br>
+
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+
+        <label for="subscription">Subscription Type:</label><br>
+        <select id="subscription" name="subscription">
+            <option value="monthly">Monthly</option>
+            <option value="annual">Annual</option>
+            <option value="on-demand">On Demand</option>
+        </select><br>
+
+        <label for="user-type">User Type:</label><br>
+        <input type="radio" id="user-type" name="user-type" value="carrier">
+        <label for="carrier">Carrier</label>
+        <input type="radio" id="user-type" name="user-type" value="merchant">
+        <label for="merchant">Merchant</label><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+

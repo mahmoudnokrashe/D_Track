@@ -1,0 +1,94 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl; /* توجيه النص إلى اليمين */
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    color: #333;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* تحديد الاستدامة للعناصر في الجزء العلوي من الصفحة */
+    flex-wrap: wrap; /* التعامل مع حالة العرض عند انتقال الشاشة */
+}
+
+section, aside {
+    width: calc(50% - 20px); /* استخدام الحسابات لتحديد عرض الأقسام مع الهوامش */
+    padding: 20px;
+    margin: 10px; /* إضافة هوامش بين الأقسام */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* إضافة ظل للأقسام */
+}
+
+aside {
+    order: -1; /* تغيير ترتيب الجانب الأيمن إلى اليسار */
+}
+
+form {
+    text-align: right; /* توجيه النص إلى اليمين داخل النماذج */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: calc(100% - 12px); /* تحديد عرض حقول الإدخال مع الهوامش */
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* تغيير لون الخلفية بشكل سلس عند التحويل */
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#user-image-preview {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 20px; /* توسيط الصورة وإضافة هامش أسفلها */
+    display: block; /* إظهار الصورة بشكل متوسط */
+}
+
+#user-details {
+    margin-top: 20px; /* إضافة هامش أعلى لقسم بيانات المستخدم */
+}
+
+#terms {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}

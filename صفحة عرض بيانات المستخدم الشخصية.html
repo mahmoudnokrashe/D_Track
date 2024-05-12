@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Add some padding to the content to prevent it from being hidden behind the header */
+    .content {
+      padding-top: 60px; /* Adjust according to your header height */
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>D.Track</h1>
+  </header>
+
+  <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+    <!-- Your page content goes here -->
+  </div>
+
+  <script>
+    // Optional: You can add JavaScript to add additional behaviors to your sticky header
+    // For example, you can add a class when scrolling down to change its appearance
+
+    window.onscroll = function() {
+      var header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?php
+// الاتصال بقاعدة البيانات
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "database";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("فشل الاتصال: " . $conn->connect_error);
+}
+
+// تحديث حالة الطلب
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $order_id = $_POST['order_id'];
+    $status = $_POST['status'];
+
+    $sql = "UPDATE orders SET order_status='$status' WHERE order_id=$order_id";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "تم تحديث حالة الطلب بنجاح.";
+    } else {
+        echo "خطأ في التحديث: " . $conn->error;
+    }
+}
+
+$conn->close();
+?>

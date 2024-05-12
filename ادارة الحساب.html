@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الحساب</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>إدارة الحساب</h1>
+    <form action="update_account.php" method="post">
+        <label for="fullname">الاسم الكامل:</label>
+        <input type="text" id="fullname" name="fullname" required><br><br>
+        <label for="phone">رقم الهاتف:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+        <label for="address">العنوان:</label>
+        <textarea id="address" name="address" required></textarea><br><br>
+        <label for="payment_method">طرق الدفع:</label>
+        <select id="payment_method" name="payment_method">
+            <option value="credit_card">بطاقة ائتمانية</option>
+            <option value="cash_on_delivery">الدفع عند الاستلام</option>
+            <!-- أضف المزيد من الخيارات حسب الحاجة -->
+        </select><br><br>
+        <button type="submit">تحديث</button>
+    </form>
+    <a href="logout.php">تسجيل الخروج</a>
+</body>
+</html>

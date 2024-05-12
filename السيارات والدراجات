@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقييم السيارة والدراجة البخارية</title>
+    <style>
+        /* تنسيق النموذج */
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 600px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>تقييم السيارة والدراجة البخارية</h1>
+    </header>
+
+    <form id="vehicle-evaluation-form">
+        <h2>تفاصيل الحالة العامة</h2>
+        <label for="vehicle-type">نوع المركبة:</label>
+        <select id="vehicle-type" name="vehicle_type">
+            <option value="car">سيارة</option>
+            <option value="motorcycle">دراجة بخارية</option>
+        </select>
+
+        <label for="general-appearance">مظهر السيارة أو الدراجة البخارية:</label>
+        <textarea id="general-appearance" name="general_appearance" rows="4" placeholder="أدخل تفاصيل عن المظهر العام مثل الخدوش، والصدمات، والصدأ، والتآكل."></textarea>
+
+        <h2>تفاصيل الأداء والميكانيكا</h2>
+        <label for="engine-performance">أداء المحرك:</label>
+        <textarea id="engine-performance" name="engine_performance" rows="4" placeholder="أدخل تفاصيل عن أداء المحرك مثل القوة، والاستجابة، والأصوات غير المعتادة."></textarea>
+
+        <!-- استهلاك الوقود أو الطاقة وفصل كل نوع من أنواع الوقود أو الطاقة -->
+<h2>استهلاك الوقود أو الطاقة</h2>
+<label for="fuel-type">نوع الوقود أو الطاقة:</label>
+<select id="fuel-type" name="fuel_type">
+    <option value="gasoline">بنزين</option>
+    <option value="diesel">ديزل</option>
+    <option value="electric">كهرباء</option>
+    <!-- يمكنك إضافة أنواع أخرى إذا لزم الأمر -->
+</select>
+
+<label for="fuel-consumption">استهلاك الوقود أو الطاقة:</label>
+<input type="text" id="fuel-consumption" name="fuel_consumption" placeholder="استهلاك الوقود أو الطاقة (لتر/100 كم أو كيلواط/100 كم)">
+
+<!-- عمليات الصيانة الدورية -->
+<h2>عمليات الصيانة الدورية</h2>
+<label for="maintenance-schedule">جدول الصيانة:</label>
+<input type="date" id="maintenance-schedule" name="maintenance_schedule" placeholder="تاريخ الصيانة الدورية">
+
+<!-- سعر الوقود أو الطاقة لكل نوع -->
+<h2>سعر الوقود أو الطاقة</h2>
+<label for="gasoline-price">سعر البنزين (لتر):</label>
+<input type="text" id="gasoline-price" name="gasoline_price" placeholder="أدخل سعر البنزين (لتر)">
+
+<label for="diesel-price">سعر الديزل (لتر):</label>
+<input type="text" id="diesel-price" name="diesel_price" placeholder="أدخل سعر الديزل (لتر)">
+
+<label for="electricity-price">سعر الكهرباء (كيلوواط ساعة):</label>
+<input type="text" id="electricity-price" name="electricity_price" placeholder="أدخل سعر الكهرباء (كيلوواط ساعة)">
+
+
+        <label for="transmission">علبة التروس:</label>
+        <textarea id="transmission" name="transmission" rows="4" placeholder="أدخل تفاصيل عن علبة التروس مثل الاستجابة والتحكم."></textarea>
+
+        <label for="brake-system">نظام الفرامل:</label>
+        <textarea id="brake-system" name="brake_system" rows="4" placeholder="أدخل تفاصيل عن نظام الفرامل مثل الكفاءة والتحكم."></textarea>
+
+        <h2>تفاصيل الموثوقية والتاريخ الصياني</h2>
+        <label for="maintenance-history">سجل الصيانة:</label>
+        <textarea id="maintenance-history" name="maintenance_history" rows="4" placeholder="أدخل سجل الصيانة والتاريخ السابق للخدمة."></textarea>
+
+        <h2>تفاصيل المواصفات والملحقات</h2>
+        <label for="accessories">الملحقات:</label>
+        <textarea id="accessories" name="accessories" rows="4" placeholder="أدخل تفاصيل عن الملحقات المطلوبة والمميزات الإضافية."></textarea>
+
+        <label for="technical-specs">المواصفات التقنية:</label>
+        <textarea id="technical-specs" name="technical_specs" rows="4" placeholder="أدخل المواصفات التقنية مثل القوة، والتسارع، وسعة المحرك، والأداء الوقودي."></textarea>
+
+        <h2>تفاصيل القيمة والسوق</h2>
+        <label for="market-value">القيمة المالية:</label>
+        <textarea id="market-value" name="market_value" rows="4" placeholder="أدخل تقديرًا للقيمة المالية بناءً على الحالة وسجل الصيانة."></textarea>
+
+        <button type="submit">إرسال</button>
+    </form>
+
+    <!-- ربط النموذج بملف JavaScript -->
+    <script src="vehicle-evaluation.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Add some padding to the content to prevent it from being hidden behind the header */
+    .content {
+      padding-top: 60px; /* Adjust according to your header height */
+    }
+  </style>
+    <title>صفحة التسجيل والاشتراك</title>
+	 <link rel="stylesheet" href="M2.css">
+</head>
+<body>
+
+<header>
+    <h1>صفحة التسجيل والاشتراك</h1>
+	<nav>
+            <ul>
+                <li><a href="Use.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="MD5.html">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+</header>
+
+<section id="registration">
+    <h2>التسجيل / الاشتراك</h2>
+    <form>
+        <!-- حقول التسجيل/الاشتراك -->
+
+        <!-- زر الموافقة -->
+        <button type="submit" onclick="acceptTerms()">الموافقة على الشروط والأحكام</button>
+    </form>
+
+    <div id="terms"></div>
+</section>
+
+<script>
+    // الدالة التي تظهر شروط الاستخدام
+    function showTerms() {
+        // يمكنك هنا وضع نص الشروط القانونية
+        var termsText = "نص الشروط القانونية...";
+        document.getElementById('terms').innerHTML = termsText;
+    }
+
+    // الدالة التي يتم استدعاؤها عند النقر على زر الموافقة
+    function acceptTerms() {
+        // قم بتنفيذ إجراءات الاشتراك/التسجيل بموجب الشروط القانونية
+        // يمكنك هنا إرسال البيانات إلى الخادم لمعالجتها وتسجيل المستخدم
+        // إذا وافق المستخدم على الشروط
+    }
+</script>
+
+<!-- يتم عرض شروط الاستخدام عند تحميل الصفحة -->
+<script>
+    window.onload = function() {
+        showTerms();
+    };
+</script>
+
+</body>
+</html>

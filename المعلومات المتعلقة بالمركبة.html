@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقييم المركبة</title>
+    <style>
+        /* قم بتنسيق النموذج */
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 600px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>تقييم المركبة</h1>
+    </header>
+
+    <!-- نموذج ويب -->
+    <form id="vehicle-evaluation-form">
+        <h2>إدخال بيانات المركبة</h2>
+        
+        <label for="vehicle-type">نوع المركبة:</label>
+        <select id="vehicle-type" name="vehicle_type">
+            <option value="car">سيارة</option>
+            <option value="motorcycle">دراجة بخارية</option>
+        </select>
+
+        <label for="power">القوة:</label>
+        <input type="text" id="power" name="power" placeholder="أدخل قوة المحرك">
+
+        <label for="fuel-type">نوع الوقود:</label>
+        <select id="fuel-type" name="fuel_type">
+            <option value="gasoline">بنزين</option>
+            <option value="diesel">ديزل</option>
+            <option value="electric">كهربائي</option>
+        </select>
+
+        <label for="distance">المسافة المقطوعة (كم):</label>
+        <input type="number" id="distance" name="distance" placeholder="أدخل المسافة المقطوعة بالكيلومترات">
+
+        <label for="maintenance-history">سجل الصيانة:</label>
+        <textarea id="maintenance-history" name="maintenance_history" rows="4" placeholder="أدخل سجل الصيانة"></textarea>
+
+        <label for="condition">الحالة العامة:</label>
+        <textarea id="condition" name="condition" rows="4" placeholder="أدخل تفاصيل عن الحالة العامة للمركبة"></textarea>
+
+        <button type="submit">إرسال</button>
+    </form>
+
+    <!-- قسم النتائج -->
+    <div id="results"></div>
+
+    <!-- تضمين JavaScript -->
+    <script src="vehicle-evaluation.js"></script>
+    <script>
+        // ربط النموذج بوظيفة JavaScript
+        document.getElementById('vehicle-evaluation-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // منع إعادة تحميل الصفحة
+
+            // جمع البيانات المدخلة من النموذج
+            const formData = new FormData(event.target);
+            const vehicleType = formData.get('vehicle_type');
+            const power = formData.get('power');
+            const fuelType = formData.get('fuel_type');
+            const distance = parseFloat(formData.get('distance'));
+            const maintenanceHistory = formData.get('maintenance_history');
+            const condition = formData.get('condition');
+
+            // استخدام الخوارزميات لحساب النتائج المطلوبة
+            const fuelConsumption = calculateFuelConsumption(vehicleType, fuelType, distance);
+            const maintenanceCosts = calculateMaintenanceCosts(maintenanceHistory);
+            const marketValue = calculateMarketValue(vehicleType, condition);
+
+            // عرض النتائج في قسم النتائج
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <h2>نتائج التقييم:</h2>
+                <p>استهلاك الوقود أو الطاقة: ${fuelConsumption.toFixed(2)} لتر/كم</p>
+                <p>تكاليف الصيانة: ${maintenanceCosts.toFixed(2)} دولار</p>
+                <p>القيمة المالية: ${marketValue.toFixed(2)} دولار</p>
+            `;
+        });
+    </script>
+</body>
+</html>

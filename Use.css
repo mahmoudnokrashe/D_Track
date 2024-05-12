@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        /* Background Animation */
+        body {
+            background-image: url('background.gif'); /* Replace 'background.gif' with your animated background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Centered Registration Form */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        /* Additional CSS styles can be added as needed */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="submit.php" method="post">
+            <!-- Your registration form fields here -->
+            <h2>User Registration Form</h2>
+            <label for="full-name">Full Name:</label><br>
+            <input type="text" id="full-name" name="full-name"><br>
+            <!-- Add more form fields as needed -->
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإشعارات والتنبيهات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>الإشعارات والتنبيهات</h1>
+    <div class="notifications">
+        <h2>إرسال الإشعارات:</h2>
+        <form action="send_notification.php" method="post">
+            <label for="recipient">المستلم:</label>
+            <select id="recipient" name="recipient">
+                <option value="customers">العملاء</option>
+                <option value="merchants">التجار</option>
+            </select>
+            <label for="message">الرسالة:</label>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea>
+            <button type="submit">إرسال</button>
+        </form>
+    </div>
+</body>
+</html>

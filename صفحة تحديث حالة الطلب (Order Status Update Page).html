@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحديث حالة الطلب</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>تحديث حالة الطلب</h1>
+    <div class="order-details">
+        <h2>تفاصيل الطلب:</h2>
+        <p>رقم الطلب: #123456</p>
+        <p>تاريخ الطلب: 2024-03-25</p>
+        <p>حالة الطلب الحالية: قيد المعالجة</p>
+        <!-- يمكن إضافة المزيد من تفاصيل الطلب هنا -->
+    </div>
+    <div class="update-form">
+        <h2>تحديث حالة الطلب:</h2>
+        <form action="update_order_status.php" method="post">
+            <input type="hidden" name="order_id" value="123456">
+            <label for="status">اختر الحالة الجديدة:</label>
+            <select id="status" name="status">
+                <option value="confirmed">تم تأكيد الطلب</option>
+                <option value="preparing">قيد الإعداد</option>
+                <option value="shipping">تم الشحن</option>
+                <option value="delivered">تم التسليم</option>
+                <!-- يمكن إضافة المزيد من خيارات حالة الطلب هنا -->
+            </select>
+            <button type="submit">تحديث</button>
+        </form>
+    </div>
+</body>
+</html>

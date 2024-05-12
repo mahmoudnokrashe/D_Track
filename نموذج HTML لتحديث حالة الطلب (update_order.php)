@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحديث حالة الطلب</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>تحديث حالة الطلب</h1>
+
+    <form method="post" action="process_update.php">
+        <label for="order_id">رقم الطلب:</label>
+        <input type="text" id="order_id" name="order_id" required><br><br>
+
+        <label for="status">حالة الطلب:</label>
+        <select id="status" name="status" required>
+            <option value="تأكيد الاستلام">تأكيد الاستلام</option>
+            <option value="إعداد الطلب">إعداد الطلب</option>
+            <option value="تسليم الطلب">تسليم الطلب</option>
+        </select><br><br>
+
+        <input type="submit" value="تحديث الحالة">
+    </form>
+</body>
+</html>

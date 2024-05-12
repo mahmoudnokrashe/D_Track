@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقديم الطلبات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>تقديم الطلبات</h1>
+    <form action="submit_order.php" method="post">
+        <div class="items">
+            <h2>العناصر المطلوبة:</h2>
+            <ul>
+                <li>اسم المنتج 1 - الكمية: 2</li>
+                <li>اسم المنتج 2 - الكمية: 1</li>
+                <!-- يمكن إضافة المزيد من العناصر المطلوبة هنا -->
+            </ul>
+        </div>
+        <div class="payment">
+            <h2>طريقة الدفع:</h2>
+            <input type="radio" id="credit_card" name="payment_method" value="credit_card" checked>
+            <label for="credit_card">بطاقة ائتمانية</label><br>
+            <input type="radio" id="cash_on_delivery" name="payment_method" value="cash_on_delivery">
+            <label for="cash_on_delivery">الدفع عند الاستلام</label><br>
+            <!-- يمكن إضافة المزيد من خيارات طرق الدفع هنا -->
+        </div>
+        <div class="delivery">
+            <h2>طريقة التوصيل:</h2>
+            <select id="delivery_method" name="delivery_method">
+                <option value="standard">التوصيل العادي</option>
+                <option value="express">التوصيل السريع</option>
+                <!-- يمكن إضافة المزيد من خيارات طرق التوصيل هنا -->
+            </select>
+        </div>
+        <button type="submit">تأكيد الطلب</button>
+    </form>
+</body>
+</html>

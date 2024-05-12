@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تتبع حالة الطلبات</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>تتبع حالة الطلبات</h1>
+    <div id="ordersList"></div>
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+            });
+        }
+
+        function updateOrders() {
+            // استخدام AJAX لجلب بيانات الطلبات من الخادم
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var orders = JSON.parse(this.responseText);
+                    displayOrders(orders);
+                    displayOrdersOnMap(orders);
+                }
+            };
+            xhttp.open("GET", "get_orders.php", true);
+            xhttp.send();
+        }
+
+        function displayOrders(orders) {
+            var ordersList = document.getElementById("ordersList");
+            ordersList.innerHTML = "<h2>قائمة الطلبات</h2>";
+            for (var i = 0; i < orders.length; i++) {
+                ordersList.innerHTML += "<p>الطلب رقم " + orders[i].id + " - الحالة: " + orders[i].status + "</p>";
+            }
+        }
+
+        function displayOrdersOnMap(orders) {
+            for (var i = 0; i < orders.length; i++) {
+                var order = orders[i];
+                var marker = new google.maps.Marker({
+                    position: {lat: order.latitude, lng: order.longitude},
+                    map: map,
+                    title: "الطلب رقم " + order.id
+                });
+            }
+        }
+
+        // تحديث بيانات الطلبات كل 5 ثواني
+        setInterval(updateOrders, 5000);
+    </script>
+</body>
+</html>
+
+لتطوير واجهة مستخدم تتيح للعملاء تتبع حالة الطلبات الخاصة بهم وعرضها على الخريطة، يمكن استخدام تقنيات الويب الحية مثل AJAX للتحديث بشكل دوري أو WebSocket للتحديث في الوقت الفعلي. سأقدم لك مثالًا بسيطًا باستخدام تقنية AJAX ومكتبة JavaScript للخرائط (مثل Google Maps API) لعرض موقع الطلبات على الخريطة:
+
+HTML:
+يتم استخدام AJAX لجلب بيانات الطلبات من الخادم بانتظام، ثم يتم عرض قائمة الطلبات مع حالتها الحالية على الصفحة. بعد ذلك، يتم استخدام Google Maps API لعرض موقع الطلبات على الخريطة. تُحدث بيانات الطلبات كل 5 ثواني باستخدام setInterval().
+
+يرجى استبدال YOUR_API_KEY بمفتاح API الخاص بك لـ Google Maps. يجب أيضًا إنشاء ملف PHP (مثل get_orders.php) لجلب بيانات الطلبات من قاعدة البيانات وإرجاعها بتنسيق JSON.
+
+
+
+
+
+

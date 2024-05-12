@@ -1,0 +1,62 @@
+/* تنظيم الأقسام */
+aside, section {
+    width: 45%; /* تم تقليل عرض الأقسام لتتناسب مع الصفحة */
+    padding: 20px;
+    box-sizing: border-box; /* تأكد من أن ال padding لا يزيد عرض الأقسام */
+}
+
+/* تنسيق الصورة الشخصية */
+#user-image-preview {
+    width: 100%; /* جعل الصورة تمتد لتملأ العرض المتاح */
+    height: auto; /* تمكين الصورة من الاحتفاظ بتوازن النسب */
+    border-radius: 50%; /* جعل الزوايا دائرية */
+    display: none; /* إخفاء الصورة بشكل افتراضي */
+    margin-bottom: 20px; /* إضافة هامش للصورة بعد العرض */
+}
+
+/* تنظيم العناصر داخل الأقسام */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* تحديد المسافة بين العناصر داخل النموذج */
+}
+
+/* تنسيق الحقول النصية */
+input[type="text"],
+input[type="date"] {
+    width: 100%; /* جعل حقول الإدخال تمتد لتملأ العرض المتاح */
+    padding: 10px; /* إضافة حشو داخل الحقول */
+    font-size: 16px; /* تحديد حجم الخط */
+    border-radius: 5px; /* جعل الزوايا مستديرة */
+    border: 1px solid #ccc; /* تحديد حدود للحقول */
+}
+
+/* تنسيق زر التسجيل */
+#registration button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%; /* جعل زر التسجيل يمتد لتملأ العرض المتاح */
+}
+
+#registration button:hover {
+    background-color: #555;
+}
+
+/* تنظيم الشروط */
+#registration label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#terms-checkbox {
+    margin-right: 5px;
+}
+
+/* تنسيق عناصر البيانات */
+#user-details p {
+    margin: 0; /* إزالة الهوامش الافتراضية للفقرات */
+}

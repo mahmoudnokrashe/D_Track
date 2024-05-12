@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الشحن و التسعير</title>
+	 <link rel="stylesheet" href="M2.css">
+</head>
+<body>
+
+<header>
+    <h1>صفحة الشحن و التسعير</h1>
+	<nav>
+            <ul>
+                <li><a href="Use.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="MD5.html">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+		<hr/>
+		
+</header>
+
+<section id="pricing">
+    <h2>التسعير</h2>
+    <form>
+        <label for="product-name"> نوع المنتج:</label><br>
+        <input type="text" id="product-name" name="product-name"placeholder=" اسم المنتج "><br><br>
+        <hr/style="width: 195px;>
+        <label for="weight">الوزن :</label><br>
+        <input type="number" id="weight" name="weight" min="0" step="0.1"placeholder=" بالكيلوغرام "><br><br>
+        <hr/style="width: 195px;>
+		<label for="weight"> ابعاد المنتج </label><br>
+        <input type="number" id="weight" name="weight" min="0" step="0.1"placeholder="الطول "><br><br>
+
+        <input type="number" id="weight" name="weight" min="0" step="0.1"placeholder="العرض "><br><br>
+
+        <input type="number" id="weight" name="weight" min="0" step="0.1"placeholder="الارتفاع "><br><br>
+		<hr/style="width: 195px;>
+        <label for="from-location">العنوان:</label><br>
+        <input type="text" id="from-location" name="from-location"placeholder="من العنوان "><br><br>
+
+        <label for="to-location">العنوان:</label><br>
+        <input type="text" id="to-location" name="to-location"placeholder="الى العنوان"><br><br>
+        <hr/style="width: 195px;>
+        <button type="button" onclick="calculateDistanceAndPrice()">تقدير المسافة والتسعير</button>
+    </form>
+
+    <div id="result"></div>
+</section>
+
+<script>
+    function calculateDistanceAndPrice() {
+        var fromLocation = document.getElementById('from-location').value;
+        var toLocation = document.getElementById('to-location').value;
+
+        var geocoder = new google.maps.Geocoder();
+        var service = new google.maps.DistanceMatrixService();
+
+        geocoder.geocode({ 'address': fromLocation }, function (resultsFrom, statusFrom) {
+            if (statusFrom == google.maps.GeocoderStatus.OK) {
+                geocoder.geocode({ 'address': toLocation }, function (resultsTo, statusTo) {
+                    if (statusTo == google.maps.GeocoderStatus.OK) {
+                        var origin = resultsFrom[0].geometry.location;
+                        var destination = resultsTo[0].geometry.location;
+
+                        service.getDistanceMatrix({
+                            origins: [origin],
+                            destinations: [destination],
+                            travelMode: google.maps.TravelMode.DRIVING,
+                            unitSystem: google.maps.UnitSystem.METRIC,
+                        }, function (response, status) {
+                            if (status == google.maps.DistanceMatrixStatus.OK) {
+                                var distance = response.rows[0].elements[0].distance.value / 1000; // in kilometers
+                                var price = distance * 0.5; // Assuming price is $0.5 per kilometer
+                                document.getElementById('result').innerHTML = "<p>المسافة: " + distance.toFixed(2) + " كم</p><p>التكلفة: $" + price.toFixed(2) + "</p>";
+                            } else {
+                                alert('خطأ في تقدير المسافة');
+                            }
+                        });
+                    } else {
+                        alert('خطأ في تحديد موقع الوصول');
+                    }
+                });
+            } else {
+                alert('خطأ في تحديد موقع المغادرة');
+            }
+        });
+    }
+</script>
+
+<!-- تضمين خريطة جوجل -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+</body>
+</html>

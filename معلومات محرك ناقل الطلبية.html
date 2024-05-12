@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Add some padding to the content to prevent it from being hidden behind the header */
+    .content {
+      padding-top: 60px; /* Adjust according to your header height */
+    }
+  </style>
+    <title>صفحة التسعير والشحن</title>
+	 <link rel="stylesheet" href="M2.css">
+</head>
+<body>
+
+<header>
+    <h1>صفحة التسعير والشحن</h1>
+</header>
+
+<section id="pricing">
+    <h2>التسعير</h2>
+    <form>
+        <label for="product-name">اسم المنتج:</label><br>
+        <input type="text" id="product-name" name="product-name"><br><br>
+        
+        <label for="weight">الوزن (بالكيلوغرام):</label><br>
+        <input type="number" id="weight" name="weight" min="0" step="0.1"><br><br>
+
+        <label for="from-location">من (العنوان):</label><br>
+        <input type="text" id="from-location" name="from-location"><br><br>
+
+        <label for="to-location">إلى (العنوان):</label><br>
+        <input type="text" id="to-location" name="to-location"><br><br>
+
+        <button type="button" onclick="calculateDistanceAndPrice()">تقدير المسافة والتسعير</button>
+    </form>
+
+    <div id="result"></div>
+</section>
+
+<!-- نموذج معلومات الناقل -->
+<section id="carrier-info">
+    <h2>معلومات الناقل</h2>
+    <form>
+        <label for="engine-power">قوة المحرك (بالحصان):</label><br>
+        <input type="number" id="engine-power" name="engine-power" min="0"><br><br>
+        
+        <label for="energy-consumption">استهلاك الطاقة (باللتر لكل 100 كيلومتر):</label><br>
+        <input type="number" id="energy-consumption" name="energy-consumption" min="0" step="0.01"><br><br>
+
+        <label for="spare-parts-cost">تكلفة قطع الغيار (بالدولار):</label><br>
+        <input type="number" id="spare-parts-cost" name="spare-parts-cost" min="0" step="0.01"><br><br>
+
+        <button type="button" onclick="calculateCarrierCost()">حساب التكاليف</button>
+    </form>
+
+    <div id="carrier-cost"></div>
+</section>
+
+<script>
+    function calculateDistanceAndPrice() {
+        // كود حساب المسافة والتسعير من الكود السابق
+    }
+
+    function calculateCarrierCost() {
+        var enginePower = parseFloat(document.getElementById('engine-power').value);
+        var energyConsumption = parseFloat(document.getElementById('energy-consumption').value);
+        var sparePartsCost = parseFloat(document.getElementById('spare-parts-cost').value);
+
+        // حساب التكاليف الضريبية
+        var taxRate = 0.15; // نسبة الضريبة المطبقة
+        var tax = (enginePower * 100 + energyConsumption * 10 + sparePartsCost * 0.1) * taxRate;
+
+        // عرض التكاليف الضريبية
+        document.getElementById('carrier-cost').innerHTML = "<p>الضرائب: $" + tax.toFixed(2) + "</p>";
+    }
+</script>
+
+<!-- تضمين خريطة جوجل -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+</body>
+</html>

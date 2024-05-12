@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقديم الطلبات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>تقديم الطلبات</h1>
+
+    <!-- نموذج تقديم الطلب -->
+    <form method="post" action="process_order.php">
+        <label for="items">العناصر المطلوبة:</label>
+        <textarea id="items" name="items" rows="4" cols="50" required></textarea><br><br>
+        
+        <label for="payment_method">طريقة الدفع:</label>
+        <select id="payment_method" name="payment_method" required>
+            <option value="cash">الدفع نقداً</option>
+            <option value="credit_card">الدفع عبر بطاقة ائتمان</option>
+        </select><br><br>
+
+        <label for="delivery_method">طريقة التوصيل:</label>
+        <select id="delivery_method" name="delivery_method" required>
+            <option value="standard">التوصيل القياسي</option>
+            <option value="express">التوصيل السريع</option>
+        </select><br><br>
+
+        <input type="submit" value="تأكيد الطلب">
+    </form>
+</body>
+</html>

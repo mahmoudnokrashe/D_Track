@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحديث مواقع الطلبات</title>
+</head>
+<body>
+    <script>
+        function updateOrdersLocation() {
+            // استخدام AJAX لتحديث مواقع الطلبات في قاعدة البيانات
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log("تم تحديث مواقع الطلبات بنجاح");
+                }
+            };
+            xhttp.open("GET", "update_orders.php", true);
+            xhttp.send();
+        }
+
+        // تحديث مواقع الطلبات كل دقيقة
+        setInterval(updateOrdersLocation, 60000); // كل دقيقة = 60000 مللي ثانية
+    </script>
+</body>
+</html>
+
+
+لتحديث قاعدة البيانات بمواقع الطلبات بشكل دوري أو في الوقت الفعلي، يمكن استخدام تقنيات الويب الحية مثل WebSocket أو استعلامات AJAX المتكررة. سأقدم لك مثالًا باستخدام AJAX لتحديث قاعدة البيانات بمواقع الطلبات بشكل دوري:
+
+قم بإنشاء ملف PHP (مثل update_orders.php) لتحديث قاعدة البيانات بمواقع الطلبات. يمكن أن يكون هذا الملف يقوم بتحديث موقع الطلب في قاعدة البيانات بناءً على البيانات التي تم استلامها من تطبيق الناقلين.
+
+استخدم تقنيات الويب الحية مثل AJAX لتنفيذ استعلامات PHP بشكل دوري. يمكن استخدام setInterval() لتنفيذ هذه الاستعلامات بانتظام.
+
+المثال التالي يوضح كيفية تحديث قاعدة البيانات بشكل دوري باستخدام AJAX:
+
+HTML:

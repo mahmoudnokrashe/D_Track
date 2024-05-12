@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+	<link rel="stylesheet" href="Use.css">
+	<select id="language-selector" onchange="changeLanguage(language.js)">
+    <option value="en">English</option>
+    <option value="ar">Arabic</option>
+</select>
+
+	
+</head>
+<body>
+    <h2>User Registration Form</h2>
+    <form action="submit.php" method="post">
+        <!-- Personal Information -->
+        <label for="full-name">Full Name:</label><br>
+        <input type="text" id="full-name" name="full-name"><br>
+
+        <label for="contact-info">Contact Information:</label><br>
+        <input type="text" id="contact-info" name="contact-info"><br>
+
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+
+        <label for="birthdate">Date of Birth:</label><br>
+        <input type="date" id="birthdate" name="birthdate"><br>
+
+        <!-- Account Information -->
+        <label for="account-info">Account Information:</label><br>
+        <input type="text" id="account-info" name="account-info"><br>
+
+        <!-- Previous Orders Information -->
+        <label for="previous-orders">Previous Orders Information:</label><br>
+        <input type="text" id="previous-orders" name="previous-orders"><br>
+
+        <!-- Preferences -->
+        <label for="preferences">Preferences:</label><br>
+        <input type="text" id="preferences" name="preferences"><br>
+
+        <!-- Additional Information -->
+        <label for="additional-info">Additional Information:</label><br>
+        <input type="text" id="additional-info" name="additional-info"><br>
+
+        <!-- Address -->
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+
+        <!-- Bank Account -->
+        <label for="bank-account">Bank Account:</label><br>
+        <input type="text" id="bank-account" name="bank-account"><br>
+
+        <!-- Registration Type -->
+        <label for="registration-type">Registration Type:</label><br>
+        <input type="radio" id="delivery-driver" name="registration-type" value="delivery-driver">
+        <label for="delivery-driver">Delivery Driver</label>
+        <input type="radio" id="company" name="registration-type" value="company">
+        <label for="company">Company</label><br>
+
+        <!-- Subscription Value / Commission Rate -->
+        <label for="subscription">Subscription / Commission Rate:</label><br>
+        <input type="text" id="subscription" name="subscription"><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+

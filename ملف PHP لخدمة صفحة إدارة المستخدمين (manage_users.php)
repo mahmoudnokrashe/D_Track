@@ -1,0 +1,43 @@
+<?php
+// قم بتضمين أي ملفات أو تهيئة الاتصال بقاعدة البيانات هنا
+
+// قم بتنفيذ أي دالة أو استعلام للحصول على بيانات المستخدمين هنا
+$users = array(
+    array('id' => 1, 'name' => 'محمد', 'email' => 'mohammed@example.com', 'phone' => '123456789'),
+    array('id' => 2, 'name' => 'أمينة', 'email' => 'amina@example.com', 'phone' => '987654321'),
+    // يمكن إضافة المزيد من بيانات المستخدمين هنا
+);
+?>
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المستخدمين</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>إدارة المستخدمين</h1>
+    <div class="user-list">
+        <h2>قائمة المستخدمين:</h2>
+        <table>
+            <tr>
+                <th>الرقم</th>
+                <th>الاسم</th>
+                <th>البريد الإلكتروني</th>
+                <th>رقم الهاتف</th>
+            </tr>
+            <?php foreach ($users as $user): ?>
+                <tr>
+                    <td><?php echo $user['id']; ?></td>
+                    <td><?php echo $user['name']; ?></td>
+                    <td><?php echo $user['email']; ?></td>
+                    <td><?php echo $user['phone']; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+    <!-- يمكن إضافة نموذج لإضافة أو تعديل المستخدمين هنا -->
+</body>
+</html>

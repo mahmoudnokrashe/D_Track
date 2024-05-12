@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة التسجيل والاشتراك</title>
+    <link rel="stylesheet" href="E:\موقع تحت التنفيذ\ملفات الموقع دليفرى\ملفات  CSS">
+</head>
+<body>
+
+<header>
+   
+</header>
+<nav>
+    <h1>صفحة بيانات مستخدم جديد</h1>
+</nav>
+<div class="content">
+   
+    
+			 <section><article>
+        <form>
+		    <h1>صفحة التسجيل والاشتراك</h1>
+            <!-- Personal Information -->
+            <label for="full-name">الاسم الكامل:</label><br>
+            <input type="text" id="full-name" placeholder="الاسم الكامل"><br>
+
+            <label for="contact-info">معلومات الاتصال:</label><br>
+            <input type="text" id="contact-info" placeholder="معلومات الاتصال"><br>
+
+            <label for="gender">الجنس:</label><br>
+            <input type="radio" id="male" name="gender" value="ذكر">
+            <label for="male">ذكر</label>
+            <input type="radio" id="female" name="gender" value="أنثى">
+            <label for="female">أنثى</label>
+
+            <label for="birthdate">تاريخ الميلاد:</label><br>
+            <input type="date" id="birthdate"><br>
+
+            <!-- Account Information -->
+            <label for="account-info">معلومات الحساب:</label><br>
+            <input type="text" id="account-info" placeholder="معلومات الحساب"><br>
+
+            <!-- Subscription Period -->
+            <label for="subscription">مدة الاشتراك:</label><br>
+            <input type="text" id="subscription" placeholder="مدة الاشتراك"><br>
+        
+            <!-- عرض الصورة الشخصية -->
+            <label for="user-image">صورة المستخدم:</label>
+            <input type="file" id="user-image" accept="image/*"><br><br>
+            
+            <label for="terms-checkbox">الموافقة على الشروط والأحكام:</label><br>
+            <input type="checkbox" id="terms-checkbox"><br><br>
+            <button type="button" onclick="acceptTerms()">تسجيل</button>
+				
+         </form></article>
+		 </section>
+		
+		<aside>
+		  <section>
+		    <img src="" alt="صورة المستخدم" id="user-image-preview" style="display: none;"><br><br>
+		    <div id="user-details"><h1>بيانات مستخدم</h1></div>
+			
+          </section>
+        </aside>
+        
+    
+</div>
+
+<script src="E:\موقع تحت التنفيذ\ملفات الموقع دليفرى\JS"></script>
+
+</body>
+</html>

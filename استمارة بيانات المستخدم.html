@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+	button{
+		background-color:white;
+	    color:#333;
+		padding:10px;
+		position:fixed;
+		text-align:center;
+		width:150px;
+	
+	
+	}
+  /*  header {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }*/
+
+    /* Add some padding to the content to prevent it from being hidden behind the header */
+    .content {
+      padding-top: 60px;
+     
+	  /* Adjust according to your header height */
+    }
+  </style>
+    <title>User Registration Form</title>
+	<link rel="stylesheet" href="Use.css">
+	<select id="language-selector" onchange="changeLanguage(language.js)">
+    <option value="en">English</option>
+    <option value="ar">Arabic</option>
+</select>
+
+	
+</head>
+<body>
+
+<header>
+    <h1>صفحة التسجيل والاشتراك</h1>
+</header>
+ 
+	
+    <form action="submit.php" method="post">
+        <!-- Personal Information -->
+        <label for="full-name">Full Name:</label><br>
+        <input type="text" id="full-name" name="full-name"><br>
+
+        <label for="contact-info">Contact Information:</label><br>
+        <input type="text" id="contact-info" name="contact-info"><br>
+
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+
+        <label for="birthdate">Date of Birth:</label><br>
+        <input type="date" id="birthdate" name="birthdate"><br>
+
+        <!-- Account Information -->
+        <label for="account-info">Account Information:</label><br>
+        <input type="text" id="account-info" name="account-info"><br>
+
+        <!-- Previous Orders Information -->
+        <label for="previous-orders">Previous Orders Information:</label><br>
+        <input type="text" id="previous-orders" name="previous-orders"><br>
+
+        <!-- Preferences -->
+        <label for="preferences">Preferences:</label><br>
+        <input type="text" id="preferences" name="preferences"><br>
+
+        <!-- Additional Information -->
+        <label for="additional-info">Additional Information:</label><br>
+        <input type="text" id="additional-info" name="additional-info"><br>
+
+        <!-- Address -->
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+
+        <!-- Bank Account -->
+        <label for="bank-account">Bank Account:</label><br>
+        <input type="text" id="bank-account" name="bank-account"><br>
+
+        <!-- Registration Type -->
+        <label for="registration-type">Registration Type:</label><br>
+        <input type="radio" id="delivery-driver" name="registration-type" value="delivery-driver">
+        <label for="delivery-driver">Delivery Driver</label>
+        <input type="radio" id="company" name="registration-type" value="company">
+        <label for="company">Company</label><br>
+
+        <!-- Subscription Value / Commission Rate -->
+        <label for="subscription">Subscription / Commission Rate:</label><br>
+        <input type="text" id="subscription" name="subscription"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit">Submit</button>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<section id="registration">
+	
+    <form>
+        <!-- حقول التسجيل/الاشتراك -->
+
+        <!-- زر الموافقة -->
+		<input type="radio" id="الموافقة على الشروط والأحكام" name="registration-type" value=""الموافقة على الشروط والأحكام">
+        <label for=""الموافقة على الشروط والأحكام">"الموافقة على الشروط والأحكام</label><br>
+        <button type="submit" onclick="acceptTerms()"الموافقة على الشروط والأحكام</button>
+    </form>
+
+    <div id="terms"></div>
+</section>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<script>
+    // الدالة التي تظهر شروط الاستخدام
+    function showTerms() {
+        // يمكنك هنا وضع نص الشروط القانونية
+        var termsText = "نص الشروط القانونية...";
+        document.getElementById('terms').innerHTML = termsText;
+    }
+
+    // الدالة التي يتم استدعاؤها عند النقر على زر الموافقة
+    function acceptTerms() {
+        // قم بتنفيذ إجراءات الاشتراك/التسجيل بموجب الشروط القانونية
+        // يمكنك هنا إرسال البيانات إلى الخادم لمعالجتها وتسجيل المستخدم
+        // إذا وافق المستخدم على الشروط
+    }
+</script>
+
+<!-- يتم عرض شروط الاستخدام عند تحميل الصفحة -->
+<script>
+    window.onload = function() {
+        showTerms();
+    };
+</script>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+
+<button>
+    <h2>التسجيل / الاشتراك</h2>
+	</button>
+
+ </form>
+</body>
+</html>
+

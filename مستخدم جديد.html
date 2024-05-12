@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة التسجيل والاشتراك</title>
+    <link rel="stylesheet" href="css5.css">
+</head>
+<body>
+
+<header>
+    <h1>صفحة بيانات مستخدم جديد</h1>
+</header>
+
+<div class="content">
+   
+    <aside>
+        <form>
+		<h1>صفحة التسجيل والاشتراك</h1>
+            <!-- Personal Information -->
+            <label for="full-name">الاسم الكامل:</label><br>
+            <input type="text" id="full-name" placeholder="الاسم الكامل"><br>
+
+            <label for="contact-info">معلومات الاتصال:</label><br>
+            <input type="text" id="contact-info" placeholder="معلومات الاتصال"><br>
+
+            <label for="gender">الجنس:</label><br>
+            <input type="radio" id="male" name="gender" value="ذكر">
+            <label for="male">ذكر</label>
+            <input type="radio" id="female" name="gender" value="أنثى">
+            <label for="female">أنثى</label><br>
+
+            <label for="birthdate">تاريخ الميلاد:</label><br>
+            <input type="date" id="birthdate"><br>
+
+            <!-- Account Information -->
+            <label for="account-info">معلومات الحساب:</label><br>
+            <input type="text" id="account-info" placeholder="معلومات الحساب"><br>
+
+            <!-- Subscription Period -->
+            <label for="subscription">مدة الاشتراك:</label><br>
+            <input type="text" id="subscription" placeholder="مدة الاشتراك"><br>
+        
+		    <!-- عرض الصورة الشخصية -->
+            <label for="user-image">صورة المستخدم:</label>
+            <input type="file" id="user-image" accept="image/*"><br><br>
+            
+		
+		</form>
+		<article>
+		 <section>
+        <h1>بيانات مستخدم</h1>
+        <div id="user-details"></div>
+		<img src="" alt="صورة المستخدم" id="user-image-preview" style="display: none;">
+         </section>
+        </article>
+
+        <section id="registration">
+            <form>
+                <label for="terms-checkbox">الموافقة على الشروط والأحكام:</label><br>
+                <input type="checkbox" id="terms-checkbox"><br><br>
+                <button type="button" onclick="acceptTerms()">تسجيل</button>
+            </form>
+            <div id="terms"></div><br>
+        </section>
+    </aside>
+</div>
+
+<script>
+    // تحديد اللغة الحالية للمتصفح
+    var userLanguage = navigator.language || navigator.userLanguage;
+
+    // تحديد اتجاه النص وتخصيص عرض الصفحة بناءً على اللغة
+    if (userLanguage.startsWith("ar")) {
+        // اللغة العربية: عرض البيانات المراد إدخالها في الجانب الأيمن
+        document.querySelector('.content').style.flexDirection = "row-reverse";
+        document.querySelector('aside').style.order = "2";
+        document.querySelector('section').style.order = "1";
+    } else {
+        // غير اللغة العربية: عرض البيانات المراد إدخالها في الجانب الأيسر
+        document.querySelector('.content').style.flexDirection = "row";
+        document.querySelector('aside').style.order = "1";
+        document.querySelector('section').style.order = "2";
+    }
+
+    // عرض الصورة الشخصية المحملة عند اختيار الملف
+    document.getElementById('user-image').addEventListener('change', function(event) {
+        var image = document.getElementById('user-image-preview');
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        
+        reader.onload = function(e) {
+            image.src = e.target.result;
+            image.style.display = 'block';
+        };
+        
+        reader.readAsDataURL(file);
+    });
+
+    // تسجيل المستخدم وعرض البيانات في الوقت الفعلي
+    function registerUser() {
+        var fullName = document.getElementById('full-name').value;
+        var contactInfo = document.getElementById('contact-info').value;
+        var gender = document.querySelector('input[name="gender"]:checked').value;
+        var birthdate = document.getElementById('birthdate').value;
+        var accountInfo = document.getElementById('account-info').value;
+        var subscription = document.getElementById('subscription').value;
+
+        // عرض البيانات في الجانب الأيسر
+        var userDetails = "<h2>بيانات المستخدم</h2>";
+        userDetails += "<p><strong>الاسم الكامل:</strong> " + fullName + "</p>";
+        userDetails += "<p><strong>معلومات الاتصال:</strong> " + contactInfo + "</p>";
+        userDetails += "<p><strong>الجنس:</strong> " + gender + "</p>";
+        userDetails += "<p><strong>تاريخ الميلاد:</strong> " + birthdate + "</p>";
+        userDetails += "<p><strong>معلومات الحساب:</strong> " + accountInfo + "</p>";
+        userDetails += "<p><strong>مدة الاشتراك:</strong> " + subscription + "</p>";
+
+        document.getElementById('user-details').innerHTML = userDetails;
+    }
+
+    // الدالة التي تظهر شروط الاستخدام
+    function showTerms() {
+        // يمكنك هنا وضع نص الشروط القانونية
+        var termsText = "نص الشروط القانونية...";
+        document.getElementById('terms').innerHTML = termsText;
+    }
+
+    // الدالة التي يتم استدعاؤها عند النقر على زر الموافقة
+    function acceptTerms() {
+        var termsCheckbox = document.getElementById('terms-checkbox');
+        if (termsCheckbox.checked) {
+            // قم بتنفيذ إجراءات الاشتراك/التسجيل بموجب الشروط القانونية
+            // يمكنك هنا إرسال البيانات إلى الخادم لمعالجتها وتسجيل المستخدم
+            // إذا وافق المستخدم على الشروط
+            registerUser(); // اتصال مباشر بوظيفة تسجيل المستخدم بعد الموافقة على الشروط
+        } else {
+            alert("يرجى قبول الشروط والأحكام أولاً.");
+        }
+    }
+
+    // يتم عرض شروط الاستخدام عند تحميل الصفحة
+    window.onload = function() {
+        showTerms();
+    };
+</script>
+
+</body>
+</html>

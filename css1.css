@@ -1,0 +1,103 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl; /* تحديد اتجاه النص إلى اليمين للغة العربية */
+    text-align: right; /* محاذاة النص إلى اليمين */
+    background-color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main sections */
+aside, section {
+    width: 50%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Image preview */
+#user-image-preview {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+/* User details */
+#user-details {
+    direction: ltr; /* تحديد اتجاه النص إلى اليسار لعرض البيانات باللغة الإنجليزية */
+    text-align: left; /* محاذاة النص إلى اليسار */
+}
+
+/* Terms section */
+#terms {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+}

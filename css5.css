@@ -1,0 +1,56 @@
+/* تنظيم العناصر */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row-reverse; /* تغيير اتجاه العرض إلى الجهة المعاكسة */
+        }
+
+        /* تنظيم الأقسام */
+        aside, section {
+            width: 50%;
+            padding: 20px;
+        }
+
+        /* تنظيم زر التسجيل ونص الشروط */
+        #registration {
+            text-align: center;
+        }
+
+        #terms {
+            margin-top: 20px;
+            font-size: 14px;
+            display: none; /* يتم إخفاء نص الشروط افتراضياً */
+        }
+
+        /* تنسيق زر الاشتراك */
+        #registration button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #registration button:hover {
+            background-color: #555;
+        }
+
+        /* تنسيق الشروط */
+        #registration label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #terms-checkbox {
+            margin-right: 5px;
+        }
+
+        /* تنسيق الصورة الشخصية */
+        #user-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%; /* لجعل الصورة دائرية */
+            margin-right: auto; /* يضع الصورة في الجهة اليمنى */
+        }
