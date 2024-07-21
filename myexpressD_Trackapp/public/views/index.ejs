@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D_Track - الصفحة الرئيسية</title>
+	    <link rel="stylesheet" type="text/css" href="\D_Track\myexpressD_Trackapp\public\assets\styles\D1.css">
+
+    
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="D.Track Logo">
+            <h1>D.Track</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\index.html">Home</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\create-shipment.html">create-shipment</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Search Results.html">Search Results</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Account.html">Account</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Support.html">Support</a></li>
+			<li><button class="login-btn"onclick="openModal('login-modal')"onclick="openModal('signup-modal')">Login/Signup</button></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main id="content">
+        <h1>مرحبًا بكم في D_Track!</h1>
+        <p>منصة مبتكرة لتحسين وتنظيم عمليات الشحن والتوصيل بكفاءة عالية.</p>
+    </main>
+
+    <!-- نافذة منبثقة لتسجيل الدخول -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('login-modal')">&times;</span>
+            <h1>تسجيل الدخول</h1>
+            <form action="login.php" method="post">
+                <label for="username">اسم المستخدم:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">كلمة المرور:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <button type="submit">تسجيل الدخول</button>
+            </form>
+            <p>ليس لديك حساب؟ <a href="#" onclick="openModal('signup-modal')">سجل الآن</a></p>
+        </div>
+    </div>
+
+    <!-- نافذة منبثقة لإنشاء حساب -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signup-modal')">&times;</span>
+            <h1>إنشاء حساب جديد</h1>
+            <form action="signup.php" method="post">
+                <label for="signup-username">اسم المستخدم:</label>
+                <input type="text" id="signup-username" name="username" required><br><br>
+                <label for="signup-email">البريد الإلكتروني:</label>
+                <input type="email" id="signup-email" name="email" required><br><br>
+                <label for="signup-password">كلمة المرور:</label>
+                <input type="password" id="signup-password" name="password" required><br><br>
+                <button type="submit">تسجيل</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="JavaScript.js"></script>
+</body>
+</html>

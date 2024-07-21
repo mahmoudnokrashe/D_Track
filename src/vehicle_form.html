@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Vehicle</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Vehicle</h2>
+        <form id="vehicleForm">
+            <div class="form-group">
+                <label for="type">Type:</label>
+                <input type="text" class="form-control" id="type" name="type" required>
+            </div>
+            <div class="form-group">
+                <label for="generalAppearance">General Appearance:</label>
+                <textarea class="form-control" id="generalAppearance" name="generalAppearance" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="enginePerformance">Engine Performance:</label>
+                <textarea class="form-control" id="enginePerformance" name="enginePerformance" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#vehicleForm').submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '/addVehicle',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        alert('Vehicle added successfully!');
+                    },
+                    error: function(error) {
+                        alert('Error adding vehicle.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

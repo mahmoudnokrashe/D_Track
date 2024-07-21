@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="C:\Users\M.N\Desktop\D_Track\myexpressapp\public\D1.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="D.Track Logo">
+            <h1>D.Track</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+    </nav>
+    
+    <section class="account">
+        <h2>الحساب الشخصي</h2>
+
+        <!-- معلومات المستخدم -->
+        <div class="user-info">
+            <h3>معلومات المستخدم</h3>
+            <p>الاسم: <span id="user-name">أحمد محمد</span></p>
+            <p>البريد الإلكتروني: <span id="user-email">ahmed@example.com</span></p>
+            <p>رقم الهاتف: <span id="user-phone">+123456789</span></p>
+            <button class="btn">تعديل المعلومات</button>
+        </div>
+
+        <!-- تاريخ الطلبات -->
+        <div class="order-history">
+            <h3>تاريخ الطلبات</h3>
+            <div class="order">
+                <p>طلب رقم: #12345</p>
+                <p>حالة الشحنة: <span class="status">تم التسليم</span></p>
+                <a href="order-details.html" class="btn">تفاصيل الشحنة</a>
+            </div>
+            <!-- يمكن إضافة المزيد من الطلبات هنا -->
+        </div>
+
+        <!-- العروض الخاصة بالمستخدم -->
+        <div class="user-offers">
+            <h3>العروض الخاصة بي</h3>
+            <div id="user-offers-list"></div>
+        </div>
+
+        <!-- إعدادات الحساب -->
+        <div class="account-settings">
+            <h3>إعدادات الحساب</h3>
+            <button class="btn">تغيير كلمة المرور</button>
+            <button class="btn">تفعيل المصادقة الثنائية</button>
+            <label for="notifications">تفضيلات الإشعارات:</label>
+            <select id="notifications">
+                <option value="email">البريد الإلكتروني</option>
+                <option value="sms">رسائل نصية</option>
+            </select>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 D.Track. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>

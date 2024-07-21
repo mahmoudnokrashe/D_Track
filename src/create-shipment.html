@@ -1,0 +1,66 @@
+
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D_Track - الصفحة الرئيسية</title>مطلوب تعديل اسم الصفحة
+	    <link rel="stylesheet" href="E:\New folder\ملفات  HTML\D_Track\D1.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="D.Track Logo">
+            <h1>D.Track</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\index.html">Home</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\create-shipment.html">create-shipment</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Search Results.html">Search Results</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Account.html">Account</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Support.html">Support</a></li>
+			<li><button class="login-btn"onclick="openModal('login-modal')"onclick="openModal('signup-modal')">Login/Signup</button></li>
+        </ul>
+    </nav>
+    </header>
+
+
+
+<h2>إنشاء طلب شحنة</h2>
+<p>يرجى تحديد نقطة الإرسال والاستلام وتفاصيل الشحنة.</p>
+
+<form id="shipment-form">
+    <label for="origin">نقطة الإرسال (A):</label>
+    <input type="text" id="origin" placeholder="أدخل عنوان الإرسال">
+
+    <label for="destination">نقطة الاستلام (B):</label>
+    <input type="text" id="destination" placeholder="أدخل عنوان الاستلام">
+
+    <label for="weight">وزن الشحنة (كجم):</label>
+    <input type="number" id="weight" placeholder="أدخل وزن الشحنة">
+
+    <label for="length">الطول (سم):</label>
+    <input type="number" id="length" placeholder="أدخل الطول">
+
+    <label for="width">العرض (سم):</label>
+    <input type="number" id="width" placeholder="أدخل العرض">
+
+    <label for="height">الارتفاع (سم):</label>
+    <input type="number" id="height" placeholder="أدخل الارتفاع">
+
+    <label for="distance">المسافة المقدرة (كم):</label>
+    <input type="number" id="distance" placeholder="أدخل المسافة المقدرة">
+
+    <button type="button" onclick="calculateShippingCost()">احسب التكلفة</button>
+</form>
+
+<p id="cost">التكلفة المقدرة: </p>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trader Information</title>
+    <style>
+        /* بعض التنسيقات البسيطة للصفحة */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trader Information</h1>
+    <form method="post" action="/add">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="company_name">Company Name:</label>
+            <input type="text" id="company_name" name="company_name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+        </div>
+        <button type="submit">Save</button>
+    </form>
+
+    <h2>Search Traders</h2>
+    <form method="get" action="/">
+        <input type="text" id="search" name="search" placeholder="Enter trader name or company" value="<%= search %>">
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Trader List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Company Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (traders.length > 0) { %>
+                <% traders.forEach(trader => { %>
+                    <tr>
+                        <td><%= trader.name %></td>
+                        <td><%= trader.company_name %></td>
+                        <td><%= trader.email %></td>
+                        <td><%= trader.phone %></td>
+                        <td><%= trader.address %></td>
+                        <td><%= trader.created_at %></td>
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <tr>
+                    <td colspan="6">No results found</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>

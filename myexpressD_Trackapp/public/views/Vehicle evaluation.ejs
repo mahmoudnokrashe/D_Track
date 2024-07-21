@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقييم السيارة والدراجة البخارية</title>
+	
+    <link rel="stylesheet" href="C:\Users\M.N\Desktop\D_Track\myexpressapp\public\D1.css">
+
+</head>
+
+<body>
+    <header>
+	      
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="D.Track Logo">
+            <h1>D.Track</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\index.html">Home</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\create-shipment.html">create-shipment</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Search Results.html">Search Results</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Account.html">Account</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Support.html">Support</a></li>
+			<li><button class="login-btn"onclick="openModal('login-modal')"onclick="openModal('signup-modal')">Login/Signup</button></li>
+        </ul>
+    </nav>
+	
+    </header>
+
+    <form id="vehicle-evaluation-form">
+        <h2>تفاصيل الحالة العامة</h2>
+        <label for="vehicle-type">اختارالمركبة</label>
+        <select id="vehicle-type" name="vehicle_type">
+            <option value="car">سيارة</option>
+            <option value="motorcycle">دراجة بخارية</option>
+        </select>
+        <label for="vehicle-type">نوع المركبة</label>
+        <select id="vehicle-type" name="vehicle_type" onchange="updateModels()">
+            <!-- خيارات يتم تحميلها ديناميكيًا من قاعدة البيانات -->
+        </select>
+
+        <label for="vehicle-model">موديل المركبة</label>
+        <select id="vehicle-model" name="vehicle_model">
+            <!-- خيارات يتم تحميلها بناءً على نوع المركبة المحدد -->
+        </select>
+
+        <label for="general-appearance">مظهر المركبة</label>
+        <textarea id="general-appearance" name="general_appearance" rows="4" placeholder="أدخل تفاصيل عن المظهر العام مثل الخدوش، والصدمات، والصدأ، والتآكل."></textarea>
+
+        <h2>تفاصيل الأداء والميكانيكا</h2>
+        <label for="engine-performance">أداء المحرك</label>
+        <textarea id="engine-performance" name="engine_performance" rows="4" placeholder="أدخل تفاصيل عن أداء المحرك مثل القوة، والاستجابة، والأصوات غير المعتادة."></textarea>
+
+        <label for="transmission">علبة التروس</label>
+        <textarea id="transmission" name="transmission" rows="4" placeholder="أدخل تفاصيل عن علبة التروس مثل الاستجابة والتحكم."></textarea>
+
+        <label for="brake-system">نظام الفرامل</label>
+        <textarea id="brake-system" name="brake_system" rows="4" placeholder="أدخل تفاصيل عن نظام الفرامل مثل الكفاءة والتحكم."></textarea>
+
+        <h2>استهلاك الوقود أو الطاقة</h2>
+        <label for="fuel-type">نوع الوقود أو الطاقة</label>
+        <select id="fuel-type" name="fuel_type">
+            <!-- خيارات يتم تحميلها ديناميكيًا من قاعدة البيانات -->
+        </select>
+
+        <label for="fuel-consumption">استهلاك الوقود أو الطاقة</label>
+        <input type="text" id="fuel-consumption" name="fuel_consumption" placeholder="استهلاك الوقود أو الطاقة (لتر/100 كم أو كيلواط/100 كم)">
+
+        <h2>عمليات الصيانة الدورية</h2>
+        <label for="maintenance-schedule">جدول الصيانة</label>
+        <input type="date" id="maintenance-schedule" name="maintenance_schedule">
+
+        <h2>تفاصيل المواصفات والملحقات</h2>
+        <label for="accessories">الملحقات</label>
+        <textarea id="accessories" name="accessories" rows="4" placeholder="أدخل تفاصيل عن الملحقات المطلوبة والمميزات الإضافية."></textarea>
+
+        <label for="technical-specs">المواصفات التقنية</label>
+        <textarea id="technical-specs" name="technical_specs" rows="4" placeholder="أدخل المواصفات التقنية مثل القوة، والتسارع، وسعة المحرك، والأداء الوقودي."></textarea>
+
+        <h2>تفاصيل القيمة والسوق</h2>
+        <label for="market-value">القيمة المالية</label>
+        <textarea id="market-value" name="market_value" rows="4" placeholder="أدخل تقديرًا للقيمة المالية بناءً على الحالة وسجل الصيانة."></textarea>
+
+        <h2>تفاصيل أمان المحرك</h2>
+        <label for="unusual-sounds">هل تسمع أي أصوات غير عادية من المحرك؟</label>
+        <select id="unusual-sounds" name="unusual_sounds">
+            <option value="yes">نعم</option>
+            <option value="no">لا</option>
+        </select>
+
+        <label for="warning-lights">هل تضيء أي من مؤشرات التحذير في لوحة العدادات؟</label>
+        <select id="warning-lights" name="warning_lights">
+            <option value="yes">نعم</option>
+            <option value="no">لا</option>
+        </select>
+
+        <label for="performance-issues">هل لاحظت أي مشاكل في أداء المحرك؟</label>
+        <textarea id="performance-issues" name="performance_issues" rows="4" placeholder="أدخل تفاصيل عن أي مشاكل تتعلق بالأداء."></textarea>
+
+        <button type="submit">إرسال</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script src="vehicle-evaluation.js"></script>
+</body>
+
+</html>

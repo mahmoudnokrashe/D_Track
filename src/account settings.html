@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إعدادات الحساب</title>
+	
+	    <link rel="stylesheet" href="E:\New folder\ملفات  HTML\D_Track\D1.css">
+	
+</head>
+<body>
+    <header>
+	  
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="D.Track Logo">
+            <h1>D.Track</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\index.html">Home</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\create-shipment.html">create-shipment</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Search Results.html">Search Results</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Account.html">Account</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Support.html">Support</a></li>
+			<li><button class="login-btn"onclick="openModal('login-modal')"onclick="openModal('signup-modal')">Login/Signup</button></li>
+        </ul>
+    </nav>
+    </header>
+    <div class="container">
+        <!-- بيانات الحساب الشخصية -->
+        <h2>تعديل بيانات الحساب الشخصية </h2>
+        <div class="section">
+            <div>
+                <img src="profile_picture.jpg" alt="صورة الملف الشخصي" class="profile-picture">
+            </div>
+            <div>
+                <input type="text" id="full-name" name="full-name" value="اسم المستخدم">
+                <span class="edit-icon">✎</span>
+            </div>
+            <div>
+                <input type="text" id="address" name="address" value="عنوان المستخدم">
+                <span class="edit-icon">✎</span>
+            </div>
+            <div>
+                <input type="text" id="phone" name="phone" value="0123456789">
+                <span class="edit-icon">✎</span>
+            </div>
+            <div>
+                <input type="email" id="email" name="email" value="user@example.com">
+                <span class="edit-icon">✎</span>
+            </div>
+        </div>
+
+        <!-- معلومات الأمان -->
+        <h2>معلومات الأمان</h2>
+        <div class="section">
+            <div>
+                <input type="password" id="password" name="password" value="password">
+                <span class="edit-icon">✎</span>
+            </div>
+            <div>
+                <select id="security-settings" name="security-settings">
+                    <option value="two-factor-authentication">التحقق بخطوتين</option>
+                    <option value="security-questions">الأسئلة الأمنية</option>
+                </select>
+                <span class="edit-icon">✎</span>
+            </div>
+        </div>
+
+        <!-- تفضيلات الحساب -->
+        <h2>تفضيلات الحساب</h2>
+        <div class="section">
+            <div>
+                <input type="text" id="language" name="language" value="العربية">
+                <span class="edit-icon">✎</span>
+            </div>
+            <div>
+                <input type="text" id="communication-preferences" name="communication-preferences" value="البريد الإلكتروني">
+                <span class="edit-icon">✎</span>
+            </div>
+            <div>
+                <input type="text" id="shopping-preferences" name="shopping-preferences" value="تفضيلات الشحن">
+                <span class="edit-icon">✎</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

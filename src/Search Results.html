@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <link rel="stylesheet" href="E:\New folder\ملفات  HTML\D_Track\D1.css">
+	
+	
+    <title>نتائج البحث - D.Track</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="D.Track Logo">
+            <h1>D.Track</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\index.html">Home</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\create-shipment.html">create-shipment</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Search Results.html">Search Results</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Account.html">Account</a></li>
+            <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Support.html">Support</a></li>
+			<li><button class="login-btn"onclick="openModal('login-modal')"onclick="openModal('signup-modal')">Login/Signup</button></li>
+        </ul>
+    </nav>
+
+    <!-- شريط البحث -->
+    <section class="search-bar">
+        <input type="text" placeholder="ابحث عن عروض الشحن..." id="search-input" value="بحث سابق">
+        <button id="search-btn"><i class="fa fa-search"></i></button>
+    </section>
+
+    <main class="content">
+        <!-- فلاتر البحث -->
+        <aside class="filters">
+            <h3>فلاتر البحث</h3>
+            <div class="filter">
+                <label for="time">الوقت:</label>
+                <select id="time">
+                    <option value="any">أي وقت</option>
+                    <option value="morning">صباحاً</option>
+                    <option value="afternoon">ظهراً</option>
+                    <option value="evening">مساءً</option>
+                </select>
+            </div>
+            <div class="filter">
+                <label for="cost">التكلفة:</label>
+                <input type="range" id="cost" min="0" max="500">
+            </div>
+            <div class="filter">
+                <label for="rating">التقييم:</label>
+                <input type="range" id="rating" min="1" max="5">
+            </div>
+            <div class="filter">
+                <label for="vehicle">نوع المركبة:</label>
+                <select id="vehicle">
+                    <option value="any">أي نوع</option>
+                    <option value="small">صغيرة</option>
+                    <option value="medium">متوسطة</option>
+                    <option value="large">كبيرة</option>
+                </select>
+            </div>
+        </aside>
+
+        <!-- قائمة نتائج البحث -->
+        <section class="search-results">
+            <div class="result">
+                <h4>عرض الشحن إلى القاهرة</h4>
+                <p>المسافة: 150 كم</p>
+                <p>السعر: 50 دولار</p>
+                <p>الوقت المتوقع: 3 ساعات</p>
+                <button class="book-btn">عرض التفاصيل</button>
+            </div>
+            <div class="result">
+                <h4>عرض الشحن إلى الإسكندرية</h4>
+                <p>المسافة: 200 كم</p>
+                <p>السعر: 75 دولار</p>
+                <p>الوقت المتوقع: 4 ساعات</p>
+                <button class="book-btn">عرض التفاصيل</button>
+            </div>
+        </section>
+
+        <!-- خريطة تفاعلية -->
+        <section class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.4282885751885!2d144.9630583156323!3d-37.8141079797519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xb9c9b632e1b7e7f7!2sMelbourne%2C%20Australia!5e0!3m2!1sen!2s!4v1615246784421!5m2!1sen!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </section>
+    </main>
+
+    <!-- التذييل -->
+    <footer>
+        <p>&copy; 2024 D.Track. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>

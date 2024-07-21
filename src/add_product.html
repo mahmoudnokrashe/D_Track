@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>إضافة منتج جديد</title>
+</head>
+<body>
+<h1>إضافة منتج لتجار التجزئة</h1>
+<form id="retailProductForm">
+    <label for="productName">اسم المنتج:</label><br>
+    <input type="text" id="productName" name="productName" required><br>
+    <label for="productDescription">وصف المنتج:</label><br>
+    <textarea id="productDescription" name="productDescription" required></textarea><br>
+    <label for="productPrice">السعر:</label><br>
+    <input type="number" id="productPrice" name="productPrice" required><br>
+    <label for="productImageURL">رابط صورة المنتج:</label><br>
+    <input type="url" id="productImageURL" name="productImageURL" required><br>
+    <label for="stockQuantity">الكمية في المستودع:</label><br>
+    <input type="number" id="stockQuantity" name="stockQuantity" required><br>
+    <button type="submit">إضافة منتج</button>
+</form>
+<h1>إضافة منتج لتجار الجملة</h1>
+<form id="wholesaleProductForm">
+    <label for="productName">اسم المنتج:</label><br>
+    <input type="text" id="productName" name="productName" required><br>
+    <label for="productDescription">وصف المنتج:</label><br>
+    <textarea id="productDescription" name="productDescription" required></textarea><br>
+    <label for="wholesalePrice">سعر الجملة:</label><br>
+    <input type="number" id="wholesalePrice" name="wholesalePrice" required><br>
+    <label for="minimumOrder">الحد الأدنى للطلب:</label><br>
+    <input type="number" id="minimumOrder" name="minimumOrder" required><br>
+    <label for="productImageURL">رابط صورة المنتج:</label><br>
+    <input type="url" id="productImageURL" name="productImageURL" required><br>
+    <button type="submit">إضافة منتج</button>
+</form>
+<h1>إضافة خدمة جديدة</h1>
+<form id="serviceForm">
+    <label for="serviceName">اسم الخدمة:</label><br>
+    <input type="text" id="serviceName" name="serviceName" required><br>
+    <label for="serviceDescription">وصف الخدمة:</label><br>
+    <textarea id="serviceDescription" name="serviceDescription" required></textarea><br>
+    <label for="servicePrice">التكلفة:</label><br>
+    <input type="number" id="servicePrice" name="servicePrice" required><br>
+    <label for="serviceDuration">المدة:</label><br>
+    <input type="text" id="serviceDuration" name="serviceDuration" required><br>
+    <label for="serviceImageURL">رابط صورة الخدمة:</label><br>
+    <input type="url" id="serviceImageURL" name="serviceImageURL" required><br>
+    <button type="submit">إضافة خدمة</button>
+</form>
+<h1>إضافة منتج مصنع</h1>
+<form id="manufacturedProductForm">
+    <label for="productName">اسم المنتج:</label><br>
+    <input type="text" id="productName" name="productName" required><br>
+    <label for="productDescription">وصف المنتج:</label><br>
+    <textarea id="productDescription" name="productDescription" required></textarea><br>
+    <label for="productMaterials">المواد المستخدمة:</label><br>
+    <input type="text" id="productMaterials" name="productMaterials" required><br>
+    <label for="productPrice">السعر:</label><br>
+    <input type="number" id="productPrice" name="productPrice" required><br>
+    <label for="manufacturingDetails">تفاصيل التصنيع:</label><br>
+    <textarea id="manufacturingDetails" name="manufacturingDetails" required></textarea><br>
+    <label for="productImageURL">رابط صورة المنتج:</label><br>
+    <input type="url" id="productImageURL" name="productImageURL" required><br>
+    <button type="submit">إضافة منتج</button>
+</form>
+<h1>إضافة منتج غذائي</h1>
+<form id="foodProductForm">
+    <label for="productName">اسم المنتج:</label><br>
+    <input type="text" id="productName" name="productName" required><br>
+    <label for="productDescription">وصف المنتج:</label><br>
+    <textarea id="productDescription" name="productDescription" required></textarea><br>
+    <label for="productPrice">السعر:</label><br>
+    <input type="number" id="productPrice" name="productPrice" required><br>
+    <label for="productImageURL">رابط صورة المنتج:</label><br>
+    <input type="url" id="productImageURL" name="productImageURL" required><br>
+    <label for="ingredients">المكونات:</label><br>
+    <textarea id="ingredients" name="ingredients" required></textarea><br>
+    <label for="expiryDate">تاريخ الانتهاء:</label><br>
+    <input type="date" id="expiryDate" name="expiryDate" required><br>
+    <label for="nutritionInfo">معلومات التغذية:</label><br>
+    <textarea id="nutritionInfo" name="nutritionInfo" required></textarea><br>
+    <button type="submit">إضافة منتج</button>
+</form>
+<h1>إضافة منتج للملابس</h1>
+<form id="clothingProductForm">
+    <label for="productName">اسم المنتج:</label><br>
+    <input type="text" id="productName" name="productName" required><br>
+    <label for="productDescription">وصف المنتج:</label><br>
+    <textarea id="productDescription" name="productDescription" required></textarea><br>
+    <label for="productPrice">السعر:</label><br>
+    <input type="number" id="productPrice" name="productPrice" required><br>
+    <label for="productImageURL">رابط صورة المنتج:</label><br>
+    <input type="url" id="productImageURL" name="productImageURL" required><br>
+    <label for="size">الحجم:</label><br>
+    <input type="
+
+    <script>
+        document.getElementById("productForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // منع إرسال النموذج بشكل افتراضي
+
+            // جمع بيانات النموذج
+            const formData = new FormData(this);
+
+            // إرسال البيانات إلى نقطة النهاية API باستخدام طلب POST
+            fetch("http://example.com/api/addProduct", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("حدث خطأ أثناء إضافة المنتج.");
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("تمت إضافة المنتج بنجاح:", data);
+                alert("تمت إضافة المنتج بنجاح.");
+            })
+            .catch(error => {
+                console.error("خطأ:", error);
+                alert("حدث خطأ أثناء إضافة المنتج. يرجى المحاولة مرة أخرى.");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استكمال بيانات سائق التوصيل</title>
+    <link rel="stylesheet" href="D1.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="D.Track Logo">
+                <h1>D.Track</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create-shipment.html">Create Shipment</a></li>
+                <li><a href="search-results.html">Search Results</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><button class="login-btn" onclick="openModal('login-modal')">Login/Signup</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="content">
+        <h1>استكمال بيانات سائق التوصيل</h1>
+        <div class="content">
+            <form id="registration-form" action="http://localhost:3000/submit-driver" method="POST">
+                <label for="vehicle-type">اختارالمركبة:</label>
+                <select id="vehicle-type" name="vehicle_type" required>
+                    <option value="car">سيارة</option>
+                    <option value="motorcycle">دراجة بخارية</option>
+                </select>
+
+                <label for="driver-license">رقم رخصة القيادة:</label>
+                <input type="text" id="driver-license" name="driver_license" required>
+
+                <label for="vehicle-info">معلومات المركبة:</label>
+                <input type="text" id="vehicle-info" name="vehicle_info" required>
+
+                <label for="license">رقم رخصة المركبة:</label>
+                <input type="text" id="license" name="license" required>
+
+                <label for="experience">سنوات الخبرة:</label>
+                <input type="number" id="experience" name="experience" required>
+
+                <button type="submit">إرسال</button>
+            </form>
+        </div>
+    </main>
+    <script src="JavaScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+dtrack-web/
+├── public/
+│   ├── assets/
+│   │   ├── styles/
+│   │   │   └── custom-style.css
+│   │   └── js/
+│   │       └── script.js
+├── views/
+│   ├── index.ejs
+│   ├── search-results.ejs
+│   ├── offer-details.ejs
+│   ├── tracking.ejs
+│   ├── account.ejs
+│   ├── about.ejs
+│   ├── login-signup.ejs
+│   ├── account-settings.ejs
+│   ├── company-details.ejs
+│   ├── delivery-driver-details.ejs
+│   ├── vehicle-evaluation.ejs
+│   ├── vehicle-information.ejs
+│   ├── create-shipment.ejs
+│   ├── dispatch-notifications.ejs
+│   ├── reports.ejs
+│   ├── terms-and-policies.ejs
+│   ├── services.ejs
+│   ├── contact.ejs
+├── db/
+│   └── schema.sql
+└── server.js
+
+
+myexpressD_Trackapp/
+├── node_modules/
+├── public/
+│   ├── assets/
+│   │   ├── styles/
+│   │   │   └── custom-style.css
+│   │   └── js/
+│   │       └── script.js
+├── views/
+│   ├── index.ejs
+│   ├── search-results.ejs
+│   ├── offer-details.ejs
+│   ├── tracking.ejs
+│   ├── account.ejs
+│   └── support.ejs
+├── db/
+│   └── schema.sql
+├── package.json
+└── app.js

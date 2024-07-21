@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\M.N\Desktop\D_Track\myexpressapp\public\D1.css">
+    <title>نتائج البحث - D.Track</title>
+</head>
+<body>
+    <nav>
+        <!-- تعريف الشريط التالي -->
+    </nav>
+    <section class="search-bar">
+        <!-- شريط البحث -->
+    </section>
+
+    <main class="content">
+        <!-- فلاتر البحث -->
+    </main>
+
+    <section class="search-results">
+        <!-- عرض نتائج البحث -->
+    </section>
+
+    <footer>
+        <!-- التذييل -->
+    </footer>
+
+    <script>
+        // استخدم AJAX لاسترجاع البيانات من السيرفر
+        fetch('/api/searchResults')
+            .then(response => response.json())
+            .then(data => {
+                const resultsContainer = document.querySelector('.search-results');
+                data.forEach(result => {
+                    const resultElement = document.createElement('div');
+                    resultElement.classList.add('result');
+                    resultElement.innerHTML = `
+                        <h4>${result.month}</h4>
+                        <p>عدد الشحنات: ${result.shipments}</p>
+                        <p>تكلفة الشحنات: ${result.cost}</p>
+                        <p>وقت التسليم المتوسط: ${result.delivery_time}</p>
+                        <button class="book-btn">عرض التفاصيل</button>
+                    `;
+                    resultsContainer.appendChild(resultElement);
+                });
+            })
+            .catch(error => console.error('خطأ في استرجاع البيانات: ', error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقييم السيارة والدراجة البخارية</title>
+    <link rel="stylesheet" href=""E:\D_Track\myexpressD_Trackapp\public\D1.css"">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="D.Track Logo">
+                <h1>D.Track</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="E:\New folder\ملفات  HTML\D_Track\index.html">Home</a></li>
+                <li><a href="E:\New folder\ملفات  HTML\D_Track\src\create-shipment.html">Create Shipment</a></li>
+                <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Search Results.html">Search Results</a></li>
+                <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Account.html">Account</a></li>
+                <li><a href="E:\New folder\ملفات  HTML\D_Track\src\Support.html">Support</a></li>
+                <li><button class="login-btn" onclick="openModal('login-modal')">Login/Signup</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="vehicle-evaluation-form">
+            <h2>تفاصيل الحالة العامة</h2>
+            <label for="vehicle-type">نوع المركبة:</label>
+            <select id="vehicle-type" name="vehicle_type">
+                <option value="car">سيارة</option>
+                <option value="motorcycle">دراجة بخارية</option>
+            </select>
+
+            <label for="general-appearance">مظهر السيارة أو الدراجة البخارية:</label>
+            <textarea id="general-appearance" name="general_appearance" rows="4" placeholder="أدخل تفاصيل عن المظهر العام مثل الخدوش، والصدمات، والصدأ، والتآكل."></textarea>
+
+            <h2>تفاصيل الأداء والميكانيكا</h2>
+            <label for="engine-performance">أداء المحرك:</label>
+            <textarea id="engine-performance" name="engine_performance" rows="4" placeholder="أدخل تفاصيل عن أداء المحرك مثل القوة، والاستجابة، والأصوات غير المعتادة."></textarea>
+
+            <h2>استهلاك الوقود أو الطاقة</h2>
+            <label for="fuel-type">نوع الوقود أو الطاقة:</label>
+            <select id="fuel-type" name="fuel_type">
+                <option value="gasoline">بنزين</option>
+                <option value="diesel">ديزل</option>
+                <option value="electric">كهرباء</option>
+            </select>
+
+            <label for="fuel-consumption">استهلاك الوقود أو الطاقة:</label>
+            <input type="text" id="fuel-consumption" name="fuel_consumption" placeholder="استهلاك الوقود أو الطاقة (لتر/100 كم أو كيلواط/100 كم)">
+
+            <h2>عمليات الصيانة الدورية</h2>
+            <label for="maintenance-schedule">جدول الصيانة:</label>
+            <input type="date" id="maintenance-schedule" name="maintenance_schedule">
+
+            <h2>سعر الوقود أو الطاقة</h2>
+            <label for="gasoline-price">سعر البنزين (لتر):</label>
+            <input type="text" id="gasoline-price" name="gasoline_price" placeholder="أدخل سعر البنزين (لتر)">
+
+            <label for="diesel-price">سعر الديزل (لتر):</label>
+            <input type="text" id="diesel-price" name="diesel_price" placeholder="أدخل سعر الديزل (لتر)">
+
+            <label for="electricity-price">سعر الكهرباء (كيلوواط ساعة):</label>
+            <input type="text" id="electricity-price" name="electricity_price" placeholder="أدخل سعر الكهرباء (كيلوواط ساعة)">
+
+            <label for="transmission">علبة التروس:</label>
+            <textarea id="transmission" name="transmission" rows="4" placeholder="أدخل تفاصيل عن علبة التروس مثل الاستجابة والتحكم."></textarea>
+
+            <label for="brake-system">نظام الفرامل:</label>
+            <textarea id="brake-system" name="brake_system" rows="4" placeholder="أدخل تفاصيل عن نظام الفرامل مثل الكفاءة والتحكم."></textarea>
+
+            <h2>تفاصيل الموثوقية والتاريخ الصياني</h2>
+            <label for="maintenance-history">سجل الصيانة:</label>
+            <textarea id="maintenance-history" name="maintenance_history" rows="4" placeholder="أدخل سجل الصيانة والتاريخ السابق للخدمة."></textarea>
+
+            <h2>تفاصيل المواصفات والملحقات</h2>
+            <label for="accessories">الملحقات:</label>
+            <textarea id="accessories" name="accessories" rows="4" placeholder="أدخل تفاصيل عن الملحقات المطلوبة والمميزات الإضافية."></textarea>
+
+            <label for="technical-specs">المواصفات التقنية:</label>
+            <textarea id="technical-specs" name="technical_specs" rows="4" placeholder="أدخل المواصفات التقنية مثل القوة، والتسارع، وسعة المحرك، والأداء الوقودي."></textarea>
+
+            <h2>تفاصيل القيمة والسوق</h2>
+            <label for="market-value">القيمة المالية:</label>
+            <textarea id="market-value" name="market_value" rows="4" placeholder="أدخل تقديرًا للقيمة المالية بناءً على الحالة وسجل الصيانة."></textarea>
+
+            <button type="submit">إرسال</button>
+        </form>
+
+        <!-- قسم النتائج -->
+        <div id="results"></div>
+    </main>
+
+    <!-- تضمين JavaScript -->
+    <script src="vehicle-evaluation.js"></script>
+    <script>
+        // ربط النموذج بوظيفة JavaScript
+        document.getElementById('vehicle-evaluation-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // منع إعادة تحميل الصفحة
+
+            // جمع البيانات المدخلة من النموذج
+            const formData = new FormData(event.target);
+            const vehicleType = formData.get('vehicle_type');
+            const generalAppearance = formData.get('general_appearance');
+            const enginePerformance = formData.get('engine_performance');
+            const fuelType = formData.get('fuel_type');
+            const fuelConsumption = formData.get('fuel_consumption');
+            const maintenanceSchedule = formData.get('maintenance_schedule');
+            const gasolinePrice = formData.get('gasoline_price');
+            const dieselPrice = formData.get('diesel_price');
+            const electricityPrice = formData.get('electricity_price');
+            const transmission = formData.get('transmission');
+            const brakeSystem = formData.get('brake_system');
+            const maintenanceHistory = formData.get('maintenance_history');
+            const accessories = formData.get('accessories');
+            const technicalSpecs = formData.get('technical_specs');
+            const marketValue = formData.get('market_value');
+
+            // عرض النتائج في قسم النتائج
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <h2>نتائج التقييم:</h2>
+                <p>نوع المركبة: ${vehicleType}</p>
+                <p>مظهر السيارة أو الدراجة البخارية: ${generalAppearance}</p>
+                <p>أداء المحرك: ${enginePerformance}</p>
+                <p>نوع الوقود أو الطاقة: ${fuelType}</p>
+                <p>استهلاك الوقود أو الطاقة: ${fuelConsumption}</p>
+                <p>جدول الصيانة: ${maintenanceSchedule}</p>
+                <p>سعر البنزين: ${gasolinePrice}</p>
+                <p>سعر الديزل: ${dieselPrice}</p>
+                <p>سعر الكهرباء: ${electricityPrice}</p>
+                <p>علبة التروس: ${transmission}</p>
+                <p>نظام الفرامل: ${brakeSystem}</p>
+                <p>سجل الصيانة: ${maintenanceHistory}</p>
+                <p>الملحقات: ${accessories}</p>
+                <p>المواصفات التقنية: ${technicalSpecs}</p>
+                <p>القيمة المالية: ${marketValue}</p>
+            `;
+        });
+    </script>
+</body>
+
+</html>

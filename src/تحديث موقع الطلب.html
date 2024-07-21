@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>تحديث موقع الطلب</title>
+</head>
+<body>
+    <h1>تحديث موقع الطلب</h1>
+    
+    <div id="map" style="height: 400px;"></div>
+
+    <script>
+        // تحديث موقع الطلب باستخدام AJAX
+        function updateOrderLocation(orderId, newLatitude, newLongitude) {
+            $.ajax({
+                type: "POST",
+                url: "update_order_location.php",
+                data: { orderId: orderId, latitude: newLatitude, longitude: newLongitude },
+                success: function(response) {
+                    console.log("تم تحديث موقع الطلب بنجاح.");
+                },
+                error: function(xhr, status, error) {
+                    console.error("حدث خطأ أثناء تحديث موقع الطلب.");
+                }
+            });
+        }
+
+        // تحديث موقع الطلب عند تغييره على الخريطة
+        function onOrderLocationChanged(orderId, newLatitude, newLongitude) {
+            updateOrderLocation(orderId, newLatitude, newLongitude);
+        }
+
+        // استخدام خريطة مثل Google Maps API أو Leaflet لتحديد موقع الطلبات وعرضها
+        // يتم استدعاء دالة onOrderLocationChanged() عند تغيير موقع الطلب على الخريطة
+    </script>
+</body>
+</html>

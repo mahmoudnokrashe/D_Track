@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة التقييم والمراجعة</title>
+    <link rel="stylesheet" href="review.css">
+</head>
+<body>
+    <header>
+        <h1>صفحة التقييم والمراجعة</h1>
+    </header>
+
+    <section id="reviews">
+        <h2>التقييمات والتعليقات</h2>
+		
+		<form method="post" action="submit_review.php"> <!-- استبدل بمسار PHP أو URL لإدخال البيانات -->
+		
+			<div class="form-group">
+				<label for="productId">رقم المنتج:</label>
+				<input type="text" id="productId" name="productId">
+			</div>
+			
+			<div class="form-group">
+				<label for="rating">التقييم (من 1 إلى 5 نجوم):</label>
+				<input type="number" id="rating" name="rating" min="1" max="5">
+			</div>
+			
+			<div class="form-group">
+				<label for="comment">التعليق:</label>
+				<textarea id="comment" name="comment"></textarea>
+			</div>
+			
+			<div class="form-group">
+				<label for="features">مميزات المنتج:</label>
+				<textarea id="features" name="features"></textarea>
+			</div>
+			
+			<div class="form-group">
+				<label for="weaknesses">نقاط الضعف:</label>
+				<textarea id="weaknesses" name="weaknesses"></textarea>
+			</div>
+			
+			<div class="form-group">
+				<label for="purchaseDate">تاريخ الشراء:</label>
+				<input type="date" id="purchaseDate" name="purchaseDate">
+			</div>
+			
+			<div class="form-group">
+				<label for="username">اسم المستخدم:</label>
+				<input type="text" id="username" name="username">
+			</div>
+			
+			<div class="form-group">
+				<label for="additionalInfo">معلومات إضافية:</label>
+				<textarea id="additionalInfo" name="additionalInfo"></textarea>
+			</div>
+			
+			<button type="submit">إرسال</button>
+		</form>
+
+		<!-- هنا يمكن عرض التقييمات من قاعدة البيانات -->
+		<?php
+			// اتصال بقاعدة البيانات واستعلام لجلب التقييمات
+			// استخدم PHP لتحديد المتغيرات واستعراض البيانات من قاعدة البيانات
+		?>
+		
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024</p>
+    </footer>
+</body>
+</html>
